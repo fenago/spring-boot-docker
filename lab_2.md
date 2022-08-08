@@ -67,6 +67,7 @@ successfully.
 
 
 ![](./images/docker-boot-employee.jpg)
+
 We have created and started a container named **producer** where we have
 deployed the employee-producer service.
 So the only change we will be making is while consuming the employee
