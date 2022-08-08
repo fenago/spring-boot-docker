@@ -26,9 +26,8 @@ git clone https://github.com/fenago/spring-boot-docker
 cd spring-boot-docker/employee-producer
 ```
 
-Run maven command - **clean install**, and a jar file gets created in
-the target folder (this will be done in Dockerfile). Next we will start docker and deploy this jar using
-docker.
+Run maven command - **mvn clean install**, and a jar file gets created in
+the target folder (this will be done in Dockerfile).
 
 **Dockerfile** Docker file is a list of commands that we want
 the docker engine to execute. Go to the spring boot project folder and
@@ -84,6 +83,6 @@ docker container logs producer
 
 ![](./images/docker-container-running-logs.jpg)
 
-The application has started successfully. Go to **DOCKER_HOST_IP_ADDRESS:8080/employee**, we will see that our application is deployed successfully.
+The application has started successfully. Go to **http://springboot-docker.eastus.cloudapp.azure.com:8080/employee**, we will see that our application is deployed successfully.
 
 ![](./images/docker-boot-container-tomcat.jpg)
