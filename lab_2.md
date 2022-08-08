@@ -60,6 +60,7 @@ docker container run --name producer -p 8080:8080 -d employee-producer
 So our employee container has started. We can test this by going to
 localhost:8080/employee, we will see that our application is deployed
 successfully.
+
 ![](./images/docker-boot-container-tomcat.jpg)
 
 **Employee Consumer -**
