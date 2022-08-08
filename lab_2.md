@@ -16,15 +16,14 @@ running in docker using some workarounds but this will not be a good
 design. So we will be deploying the two microservices employee-producer
 and employee-consumer to two different containers and then have them
 interact with each other.
-![Docker Networking
-Tutorial](./images/docker-5_2.jpg "Docker Networking Tutorial")
+
+![](./images/docker-5_2.jpg "Docker Networking Tutorial")
 
 
 
-In order to achieve this will have to make use of the **docker
-networking commands.**
+In order to achieve this will have to make use of the **docker networking commands.**
 
-[Lets Begin-]
+**Lets Begin**
 
 Lets begin with the implementation part. Import the two projects in
 eclipse.

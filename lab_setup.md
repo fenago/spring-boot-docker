@@ -10,6 +10,8 @@ will be consumed by the employee-consumer.
 
 ![](./images/sprcloud_1-5.jpg "sprcloud_1-5")
 
+**Note:** Source code for both spring boot microservices is available here:
+https://github.com/fenago/spring-boot-docker
 
 
 Lets Begin
