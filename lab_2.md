@@ -25,8 +25,11 @@ In order to achieve this will have to make use of the **docker networking comman
 
 **Lets Begin**
 
-Lets begin with the implementation part. Import the two projects in
-eclipse.
+**Note:** Make sure to stop and delete all running container(s) first.
+
+`docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)`
+
+Lets begin with the implementation part.
 
 -   **Employee Producer -**
 
@@ -35,6 +38,8 @@ project folder.
 Next we will build an image with the name producer.
 
 ```
+cd ~/spring-boot-docker/employee-producer
+
 docker image build -t employee-producer .
 ```
 
@@ -129,10 +134,13 @@ folder.
 Next we will build an image with the name consumer.
 
 ```
+cd ~/spring-boot-docker/employee-consumer
+
 docker image build -t employee-consumer .
 ```
 
 ![](./images/docker-consumer-build.jpg)
+
 Next we will run the above image as a container named consumer.
 
 ```
@@ -157,7 +165,6 @@ communicate with the container named producer.
 So we are getting a null pointer exception.
 
 
-
 **Inter Docker Container Communication Using Docker Networking**
 
 We will be using Docker Networking to allow multiple containers to
@@ -169,11 +176,24 @@ We will need to create our own network and add both the
 employee-producer and employee-consumer services to it. We will stop and
 remove the existing docker containers named consumer and producer.
 
+**Note:** Make sure to stop and delete running container(s) first.
+
+
 ![](./images/docker-consumer-remove.jpg)
+
+```
+docker container stop producer
+
+docker container rm producer
+```
 
 ![](./images/docker-producer-remove.jpg)
 
+```
+docker container stop consumer
 
+docker container rm consumer
+```
 
 Lets first check the available networks
 
@@ -211,7 +231,7 @@ docker container run --network consumer-producer --name consumer -d employee-con
 Lets check the consumer container logs-
 
 ```
-docker container logs consumer
+docker container logs consumer -f
 ```
 
 ![](./images/docker-network-logs.jpg)
