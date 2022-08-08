@@ -1,3 +1,8 @@
-From openjdk:8
-copy ./target/employee-consumer-0.0.1-SNAPSHOT.jar employee-consumer-0.0.1-SNAPSHOT.jar
-CMD ["java","-jar","employee-consumer-0.0.1-SNAPSHOT.jar"]
+FROM openjdk:8
+
+RUN apt-get update
+RUN apt-get install -y maven
+WORKDIR /demo
+COPY . /demo
+RUN mvn clean install
+CMD ["java","-jar","/demo/target/employee-consumer-0.0.1-SNAPSHOT.jar"]
