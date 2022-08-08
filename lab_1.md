@@ -27,7 +27,7 @@ cd spring-boot-docker/employee-producer
 ```
 
 Run maven command - **clean install**, and a jar file gets created in
-the target folder. Next we will start docker and deploy this jar using
+the target folder (this will be done in Dockerfile). Next we will start docker and deploy this jar using
 docker.
 
 **Dockerfile** Docker file is a list of commands that we want
